@@ -9,23 +9,26 @@ keys.forEach(key => {
 	playNote(key))})
 	
 document.addEventListener('keydown', e => {
-	//if (e.repeat) return 
+	if (e.repeat) return 
 	const key = e.key
-    console.log(key)
+    console.log(key, "Pressed")
 	const whiteKeyIndex = white_KEYS.indexOf(key) 
 	const blackKeyIndex = black_KEYS.indexOf(key)
-    if (whiteKeyIndex > -1) playNote(whiteKeys[whiteKeyIndex]) 
-    if (blackKeyIndex > -1) playNote(blackKeys[blackKeyIndex])
+    if (whiteKeyIndex > -1) {
+		playNote(whiteKeys[whiteKeyIndex])
+		whiteKeys[whiteKeyIndex].classList.add("active")
+		setTimeout(function(){ whiteKeys[whiteKeyIndex].classList.remove("active") }, 200);
+	}
+    if (blackKeyIndex > -1) {
+		playNote(blackKeys[blackKeyIndex])
+		blackKeys[blackKeyIndex].classList.add("active")
+		setTimeout(function(){ blackKeys[blackKeyIndex].classList.remove("active") }, 200);
+	}
 })
 		
-function playNote(key) { 
-	const noteAudio = document.getElementById(key.dataset.note) 
+function playNote(key) {
+	const noteAudio = document.getElementById(key.dataset.note)
     noteAudio.currentTime = 0
     noteAudio.play()
 }
 
-window.addEventListener("keydown", function(event) {
-    event.preventDefault()
-}, false);
-
-alert("Use 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p' to play white keys & 'z', 'x', 'c', 'v', 'b', 'n', 'm' to play black keys :)")
