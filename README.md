@@ -8,4 +8,4 @@ To Press Black Keys Use : Z X C V B N M
 Play The Piano - [Click Here](https://thilak-07.github.io/Piano_Keys/)
 
 ## Screenshot
-![App Screenshot](https://github.com/Thilak-07/Task-1-Piano-Keys/blob/main/Screenshots/The%20Piano.png)
+![App Screenshot](https://github.com/Thilak-07/Piano_Keys/blob/main/Screenshots/The%20Piano.png)
